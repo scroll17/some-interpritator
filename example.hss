@@ -1,0 +1,41 @@
+@@section 'div'
+body`
+  div`
+    @children {
+      "section div"
+    }
+  `
+`
+
+@@section 'root'
+body`
+  @children {
+    div`
+      @children {
+        "Some div text"
+        h1`
+          @children{
+            "this h1 text"
+          }
+        `
+      }
+      @attrib {
+        id: '234'
+        class: 'default'
+      }
+      @style {
+          color: red;
+          width: 200px;
+      }
+    `
+    []p`
+      @children {
+        "array of tag <p>"
+      }
+    `
+    @@'div'
+  }
+  @style {
+
+  }
+` 
