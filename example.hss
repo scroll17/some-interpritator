@@ -7,37 +7,35 @@ body`
   `
 `
 
-@@section 'root'
+root(inputTextOne, inputTextTwo, inputTextThree, @style, @attrib)
+
+@@section 'root' { inputTextOne, inputTextTwo, inputTextThree }
 body`
-  @children {
+  @children
     div`
-      @children {
-        "Some div text"
+      @children
+        inputTextOne
         h1`
-          @children{
+          @children
             "this h1 text"
-          }
         `
-      }
-      @attrib {
+
+      @attrib
         id: '234'
         class: 'default'
-      }
-      @style {
+
+      @style
           color: red;
           width: 200px;
-      }
     `
     []p`
-      @children {
+      @children
         "array of tag <p>"
-      }
     `
-    @@'div'
-  }
-  @style {
+    @@implement 'div'
 
-  }
+  @style
+    color: red;
 ` 
 
 head('');
