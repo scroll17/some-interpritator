@@ -29,8 +29,10 @@ body`
           width: 200px;
     `
     []p`
-      @children
-        "array of tag <p>"
+      @iterable
+        @children
+            { this.state.isTrue ? "it's true" : null },
+            inputTextTwo + ' iterable;'
     `
     @@implement 'div'
 
